@@ -7,7 +7,7 @@ This is a starting point for your AI Next.js project. It comes with a landing pa
 
 While in the project folder, launch the development server:
 ```
-> npm install
+> pnpm i
 > npm run dev
 ```
 App should now be available at [`http://localhost:3000`](http://localhost:3000).

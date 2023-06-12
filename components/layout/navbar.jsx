@@ -20,7 +20,7 @@ export default function NavBar({ session }) {
           } z-30 transition-all`}
       >
         <div className="mx-5 h-16 max-w-screen-xl flex items-center justify-between xl:mx-auto">
-          <Link href="/" className="flex items-center font-display text-2xl hover:text- duration-300">
+          <Link href="/home" className="flex items-center font-display text-2xl hover:text- duration-300">
             <Image
               src="/logo-black.jpg"
               alt="N17R logo"
@@ -33,20 +33,20 @@ export default function NavBar({ session }) {
           <div className="flex font-display">
             <div className="ml-auto flex items-center">
               <Link href="/jateq" className="mr-8 hover:text-xl duration-300">
-                Examples
+                Documentation
               </Link>
-              <Link href="/home" className="mr-8 hover:text-xl duration-300">
-                Home
+              <Link href="/" className="mr-8 hover:text-xl duration-300">
+                Chat
               </Link>
               {session ? (
                 <UserDropdown session={session} />
               ) : (
-                <p
+                <a
                   className="duration-300 hover:text-xl"
                   onClick={() => setShowSignInModal(true)}
                 >
                   Sign In
-                </p>
+                </a>
               )}
             </div>
           </div>

@@ -20,7 +20,7 @@ export default function NavBar({ session }) {
           } z-30 transition-all`}
       >
         <div className="mx-5 h-16 max-w-screen-xl flex items-center justify-between xl:mx-auto">
-          <Link href="/home" className="flex items-center font-display text-2xl hover:text- duration-300">
+          <Link href="/" className="flex items-center font-display text-2xl hover:text- duration-300">
             <Image
               src="/logo-black.jpg"
               alt="N17R logo"
@@ -35,7 +35,7 @@ export default function NavBar({ session }) {
               <Link href="/jateq" className="mr-8 hover:text-xl duration-300">
                 Documentation
               </Link>
-              <Link href="/" className="mr-8 hover:text-xl duration-300">
+              <Link href="/chat" className="mr-8 hover:text-xl duration-300">
                 Chat
               </Link>
               {session ? (

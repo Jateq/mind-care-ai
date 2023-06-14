@@ -1,9 +1,21 @@
+'use client';
+
+import Link from "next/link";
 import Image from "next/image";
 import Images from "../layout/images";
 import Balancer from "react-wrap-balancer";
 import { DEPLOY_URL } from "@/lib/constants";
+import { useSignInModal } from "../layout/sign-in-modal";
+import UserDropdown from "../layout/user-dropdown";
 
-export default function Landing() {
+export default function Landing({session}) {
+  const { setShowSignInModal, SignInModal } = useSignInModal();
+
+  const handleSignInClick = () => {
+    setShowSignInModal(true);
+  };
+
+  // console.log(session)
   return (
     <>
       <div className="flex flex-col ml-24 items-center z-10 w-full max-w-3xl px-5 xl:px-0 mr-auto mb-28">
@@ -21,15 +33,30 @@ export default function Landing() {
             Open the doors to long-lost recollections and bring forgotten moments back to life.
           </Balancer>
         </p>
+
+     
+     
+        {session ?         <Link href="/chat"  onClick={handleSignInClick}>
         <button className="flex items-center border rounded bg-gradient-to-br from-green-400 via-green-200 to-stone-300 text-white text-xl mt-6 ml-6 pl-6 pr-6 pt-1 pb-1 hover:bg-gradient-to-br hover:from-green-200 hover:via-stone-300 hover:to-green-300 hover:text-white transition-duration-300">
           <span className="flex-shrink-0">Try it</span>
-          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
-          </svg>
+          {/* <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
+          </svg> */}
         </button>
+        </Link> : ( 
+          <div>
+          <button className="flex items-center border rounded bg-gradient-to-br from-green-400 via-green-200 to-stone-300 text-white text-xl mt-6 ml-6 pl-6 pr-6 pt-1 pb-1 hover:bg-gradient-to-br hover:from-green-200 hover:via-stone-300 hover:to-green-300 hover:text-white transition-duration-300"  onClick={handleSignInClick}>
+          <span className="flex-shrink-0">Try it</span>
+          {/* <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
+          </svg> */}
+        </button>
+        <SignInModal />
+        </div>)}
+
+        {/* <SignInModal /> */}
       </div>
       <Images />
-
     </>
-  )
-}
+  );
+} 

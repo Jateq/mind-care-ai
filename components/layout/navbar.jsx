@@ -14,10 +14,10 @@ export default function NavBar({ session }) {
     <>
       <SignInModal />
       <div
-        className={`fixed top-0 w-full ${scrolled
-            ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl"
-            : "bg-white/0"
-          } z-30 transition-all`}
+        className={`fixed top-0 w-full 
+          border-b border-gray-200 backdrop-blur-xl
+          bg-white/50
+          z-30 transition-all`}
       >
         <div className="mx-5 h-16 max-w-screen-xl flex items-center justify-between xl:mx-auto">
           <Link href="/" className="flex items-center font-display text-2xl hover:text- duration-300">
@@ -35,14 +35,20 @@ export default function NavBar({ session }) {
               <Link href="/jateq" className="mr-8 hover:text-xl duration-300">
                 Documentation
               </Link>
-              <Link href="/chat" className="mr-8 hover:text-xl duration-300">
+              {session ? (
+                <Link href="/chat" className="mr-8 hover:text-xl duration-300">
+                  Chat
+                </Link>
+              ) : (
+                <a className="mr-8 hover:text-xl duration-300 cursor-pointer"  onClick={() => setShowSignInModal(true)}>
                 Chat
-              </Link>
+              </a>
+              )}
               {session ? (
                 <UserDropdown session={session} />
               ) : (
                 <a
-                  className="duration-300 hover:text-xl"
+                  className="duration-300 hover:text-xl cursor-pointer"
                   onClick={() => setShowSignInModal(true)}
                 >
                   Sign In

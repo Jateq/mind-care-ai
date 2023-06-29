@@ -1,6 +1,7 @@
 const jateq = () => {
     return (
         <>
+            <p className="w-[950px] text-red-600">Chat is turned off! I don't have enough tokens to use Openai now, wait till i get the Microsoft Scholarship for startups</p>
             <p className="w-[1000px]">Introducing MindCare AI: Your Companion for Mental Wellbeing
 
             </p>

@@ -28,7 +28,7 @@ export default function NavBar({ session }) {
               height="30"
               className="mr-2 rounded-sm"
             ></Image>
-            <p>Flashback</p>
+            <p>MindCareAI</p>
           </Link>
           <div className="flex font-display">
             <div className="ml-auto flex items-center">

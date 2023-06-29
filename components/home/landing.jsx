@@ -27,14 +27,15 @@ export default function Landing({ session }) {
             className="animate-fade-up bg-gradient-to-br from-green-400 to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-7xl md:leading-[5rem]"
             style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
           >
-            <Balancer className="w-[580px]">Unveil Your Timeless Journey</Balancer>
+            <p className="w-[1000px]">Welcome to MindCareAI:</p>
+            <p>your mental health matters</p>
           </h1>
           <p
             className="mt-6 animate-fade-up text-center text-gray-500 opacity-0 md:text-xl"
             style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
           >
             <Balancer className=" ml-3">
-              Open the doors to long-lost recollections and bring forgotten moments back to life.
+              Your personal companion on the journey to mental wellness and overall mental health. 
             </Balancer>
           </p>
 

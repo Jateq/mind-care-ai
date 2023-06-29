@@ -4,9 +4,6 @@ import { NextResponse } from 'next/server'
 // forces to not cache the response to get a different question every request
 export const dynamic = 'force-dynamic';
 
-/**
- * Retrieves a random Jeopardy question
- */
 export async function GET() {
   const res = await axios.get('https://jservice.io/api/random')
 

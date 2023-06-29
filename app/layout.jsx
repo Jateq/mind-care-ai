@@ -7,9 +7,9 @@ import Nav from "@/components/layout/nav";
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "Flashback",
+  title: "MindCareAI",
   description:
-    "Talk with yourself from past",
+    "Chat bot with AI assistant that helps you with mental well-being",
   themeColor: "#FFF",
 };
 
